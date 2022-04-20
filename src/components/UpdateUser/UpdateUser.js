@@ -5,11 +5,11 @@ const UpdateUser = () => {
   const { id } = useParams();
   const [user, setUser] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/user/${id}`;
+    const url = `https://test-node-mongo.herokuapp.com/user/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setUser(data));
-  }, []);
+  }, [id]);
 
   const handleUpdateUser = (event) => {
     event.preventDefault();
@@ -19,7 +19,7 @@ const UpdateUser = () => {
     const updatedUser = { name, email };
 
     // send data to the server
-    const url = `http://localhost:5000/user/${id}`;
+    const url = `https://test-node-mongo.herokuapp.com/user/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

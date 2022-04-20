@@ -5,7 +5,7 @@ const Users = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://test-node-mongo.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => {
         setUsers(data);
@@ -16,7 +16,7 @@ const Users = () => {
     const proceed = window.confirm("Are you sure you want to delete?");
     if (proceed) {
 //       console.log("deleting user with id, ", id);
-      const url = `http://localhost:5000/user/${id}`;
+      const url = `https://test-node-mongo.herokuapp.com/user/${id}`;
       fetch(url, {
         method: "DELETE",
       })

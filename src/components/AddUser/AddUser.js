@@ -9,7 +9,7 @@ const AddUser = () => {
     const user = { name, email };
 
     // send data to the server
-    fetch("http://localhost:5000/user", {
+    fetch("https://test-node-mongo.herokuapp.com/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",
