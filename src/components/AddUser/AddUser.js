@@ -1,10 +1,10 @@
 import React from "react";
 
 const AddUser = () => {
-  const handleAddUser = (e) => {
-    e.preventDefault();
-    const name = e.target.name.value;
-    const email = e.target.email.value;
+  const handleAddUser = (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
 
     const user = { name, email };
 
@@ -20,10 +20,9 @@ const AddUser = () => {
       .then((data) => {
         console.log("success", data);
         alert("users added successfully!!!");
-        e.target.reset();
+        event.target.reset();
       });
   };
-
   return (
     <div>
       <h2>Please add a new User</h2>
